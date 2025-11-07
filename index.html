@@ -265,9 +265,9 @@
             email.addEventListener('blur', validateEmail);
             zipCode.addEventListener('blur', validateZipCode);
             
-            // Restrict zip code to numbers only
+            // Restrict zip code to numbers only and limit to 5 digits
             zipCode.addEventListener('input', function(e) {
-                this.value = this.value.replace(/[^0-9]/g, '');
+                this.value = this.value.replace(/[^0-9]/g, '').slice(0, 5);
             });
             
             // Form submission
@@ -291,8 +291,7 @@
                     // Scroll to success message
                     successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     
-                    // Log form submission (in a real app, this would be sent to a server)
-                    console.log('Form submitted successfully');
+                    // In a real app, form data would be sent to a server here
                     
                     // Reset form after a delay (optional)
                     setTimeout(function() {
