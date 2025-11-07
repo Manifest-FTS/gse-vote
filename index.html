@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equality is Non-Negotiable in NJ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Equality is non-negotiable in NJ.
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-purple-100">
+                    Join us in the fight for equality. Add your name to stay informed about our efforts and upcoming initiatives.
+                </p>
+                <!-- Placeholder Image -->
+                <div class="mb-8">
+                    <img src="https://via.placeholder.com/800x400/667eea/ffffff?text=Equality+for+All" 
+                         alt="Equality for All" 
+                         class="rounded-lg shadow-2xl mx-auto w-full max-w-3xl">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Signup Form Section -->
+    <section class="py-16 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">
+                    Stay Informed
+                </h2>
+                <p class="text-gray-600 text-center mb-8">
+                    Sign up to receive updates about our work and how you can make a difference.
+                </p>
+                
+                <form id="signupForm" class="space-y-6" novalidate>
+                    <!-- First Name -->
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                            First Name *
+                        </label>
+                        <input type="text" 
+                               id="firstName" 
+                               name="firstName" 
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"
+                               placeholder="Enter your first name">
+                        <p class="error-message text-red-600 text-sm mt-1 hidden" id="firstNameError"></p>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                            Last Name *
+                        </label>
+                        <input type="text" 
+                               id="lastName" 
+                               name="lastName" 
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"
+                               placeholder="Enter your last name">
+                        <p class="error-message text-red-600 text-sm mt-1 hidden" id="lastNameError"></p>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            Email Address *
+                        </label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"
+                               placeholder="your.email@example.com">
+                        <p class="error-message text-red-600 text-sm mt-1 hidden" id="emailError"></p>
+                    </div>
+
+                    <!-- Zip Code -->
+                    <div>
+                        <label for="zipCode" class="block text-sm font-medium text-gray-700 mb-2">
+                            Zip Code *
+                        </label>
+                        <input type="text" 
+                               id="zipCode" 
+                               name="zipCode" 
+                               required
+                               pattern="[0-9]{5}"
+                               maxlength="5"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"
+                               placeholder="07001">
+                        <p class="error-message text-red-600 text-sm mt-1 hidden" id="zipCodeError"></p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" 
+                            class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 transition duration-200 shadow-lg">
+                        Join the Movement
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <p class="text-green-800 text-center font-medium">
+                        ✓ Thank you for joining us! We'll keep you informed about our work for equality in New Jersey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <img src="https://via.placeholder.com/200x200/764ba2/ffffff?text=Advocacy" 
+                                 alt="Advocacy" 
+                                 class="rounded-full mx-auto shadow-lg">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Advocacy</h3>
+                        <p class="text-gray-600">Fighting for equal rights and fair treatment for all New Jersey residents.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <img src="https://via.placeholder.com/200x200/667eea/ffffff?text=Community" 
+                                 alt="Community" 
+                                 class="rounded-full mx-auto shadow-lg">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Community</h3>
+                        <p class="text-gray-600">Building a strong network of supporters committed to positive change.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <img src="https://via.placeholder.com/200x200/764ba2/ffffff?text=Action" 
+                                 alt="Action" 
+                                 class="rounded-full mx-auto shadow-lg">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Action</h3>
+                        <p class="text-gray-600">Taking concrete steps to create lasting impact in our communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-gray-300 mb-4">
+                    For more information, contact us at:
+                </p>
+                <a href="mailto:contact@equalitynj.org" 
+                   class="text-purple-400 hover:text-purple-300 font-semibold text-lg transition">
+                    contact@equalitynj.org
+                </a>
+                <p class="text-gray-500 text-sm mt-6">
+                    © 2025 Equality NJ PAC. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Validation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('signupForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Form field elements
+            const firstName = document.getElementById('firstName');
+            const lastName = document.getElementById('lastName');
+            const email = document.getElementById('email');
+            const zipCode = document.getElementById('zipCode');
+            
+            // Error message elements
+            const firstNameError = document.getElementById('firstNameError');
+            const lastNameError = document.getElementById('lastNameError');
+            const emailError = document.getElementById('emailError');
+            const zipCodeError = document.getElementById('zipCodeError');
+            
+            // Validation functions
+            function validateFirstName() {
+                if (firstName.value.trim() === '') {
+                    showError(firstName, firstNameError, 'First name is required');
+                    return false;
+                } else if (firstName.value.trim().length < 2) {
+                    showError(firstName, firstNameError, 'First name must be at least 2 characters');
+                    return false;
+                } else {
+                    clearError(firstName, firstNameError);
+                    return true;
+                }
+            }
+            
+            function validateLastName() {
+                if (lastName.value.trim() === '') {
+                    showError(lastName, lastNameError, 'Last name is required');
+                    return false;
+                } else if (lastName.value.trim().length < 2) {
+                    showError(lastName, lastNameError, 'Last name must be at least 2 characters');
+                    return false;
+                } else {
+                    clearError(lastName, lastNameError);
+                    return true;
+                }
+            }
+            
+            function validateEmail() {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email.value.trim() === '') {
+                    showError(email, emailError, 'Email address is required');
+                    return false;
+                } else if (!emailPattern.test(email.value)) {
+                    showError(email, emailError, 'Please enter a valid email address');
+                    return false;
+                } else {
+                    clearError(email, emailError);
+                    return true;
+                }
+            }
+            
+            function validateZipCode() {
+                const zipPattern = /^[0-9]{5}$/;
+                if (zipCode.value.trim() === '') {
+                    showError(zipCode, zipCodeError, 'Zip code is required');
+                    return false;
+                } else if (!zipPattern.test(zipCode.value)) {
+                    showError(zipCode, zipCodeError, 'Please enter a valid 5-digit zip code');
+                    return false;
+                } else {
+                    clearError(zipCode, zipCodeError);
+                    return true;
+                }
+            }
+            
+            function showError(input, errorElement, message) {
+                input.classList.add('border-red-500');
+                input.classList.remove('border-gray-300');
+                errorElement.textContent = message;
+                errorElement.classList.remove('hidden');
+            }
+            
+            function clearError(input, errorElement) {
+                input.classList.remove('border-red-500');
+                input.classList.add('border-gray-300');
+                errorElement.classList.add('hidden');
+            }
+            
+            // Real-time validation on blur
+            firstName.addEventListener('blur', validateFirstName);
+            lastName.addEventListener('blur', validateLastName);
+            email.addEventListener('blur', validateEmail);
+            zipCode.addEventListener('blur', validateZipCode);
+            
+            // Restrict zip code to numbers only
+            zipCode.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate all fields
+                const isFirstNameValid = validateFirstName();
+                const isLastNameValid = validateLastName();
+                const isEmailValid = validateEmail();
+                const isZipCodeValid = validateZipCode();
+                
+                // If all fields are valid, show success message
+                if (isFirstNameValid && isLastNameValid && isEmailValid && isZipCodeValid) {
+                    // Hide form
+                    form.classList.add('hidden');
+                    
+                    // Show success message
+                    successMessage.classList.remove('hidden');
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Log form data (in a real app, this would be sent to a server)
+                    console.log('Form submitted:', {
+                        firstName: firstName.value,
+                        lastName: lastName.value,
+                        email: email.value,
+                        zipCode: zipCode.value
+                    });
+                    
+                    // Reset form after a delay (optional)
+                    setTimeout(function() {
+                        form.reset();
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
