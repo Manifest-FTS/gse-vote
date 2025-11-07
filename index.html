@@ -28,7 +28,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%);
+            background: linear-gradient(135deg, rgba(16, 78, 139, 0.88) 0%, rgba(5, 150, 105, 0.88) 100%);
             z-index: 1;
         }
         
@@ -48,6 +48,58 @@
                 display: none;
             }
         }
+        
+        /* Modal styles */
+        .modal-backdrop {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .modal {
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Toast notification styles */
+        .toast {
+            animation: toastSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes toastSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .toast-exit {
+            animation: toastSlideOut 0.3s ease-in forwards;
+        }
+        
+        @keyframes toastSlideOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -55,18 +107,13 @@
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">GSE</span>
-                    </div>
-                    <div>
-                        <h1 class="logo-text text-xl text-gray-800">GSE Pac</h1>
-                        <p class="text-xs text-purple-600 font-semibold">PAC</p>
-                    </div>
-                </div>
+                <h1 class="logo-text text-2xl md:text-3xl text-gray-800">GSE PAC</h1>
                 <div class="mobile-nav">
-                    <a href="#signup" class="text-purple-600 hover:text-purple-800 font-semibold transition">
-                        Join Us
+                    <a href="#signup" class="inline-flex items-center gap-2 text-blue-700 hover:text-emerald-600 font-semibold transition group">
+                        <span>Join Us</span>
+                        <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -90,12 +137,15 @@
                 <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                     Equality is non-negotiable in New Jersey.
                 </h2>
-                <p class="text-xl md:text-2xl mb-8 text-purple-100 leading-relaxed">
+                <p class="text-xl md:text-2xl mb-8 text-blue-50 leading-relaxed">
                     Our PAC—we're going to be ready no matter what the administration brings. Add your name and we'll be in touch to chart a path forward.
                 </p>
                 <div class="flex justify-center gap-4">
-                    <a href="#signup" class="inline-block bg-white text-purple-700 font-bold py-4 px-8 rounded-lg hover:bg-purple-50 transform hover:scale-105 transition duration-200 shadow-xl">
-                        Add Your Name
+                    <a href="#signup" class="inline-flex items-center gap-3 bg-amber-500 text-white font-bold py-4 px-8 rounded-lg hover:bg-amber-600 transform hover:scale-105 transition duration-200 shadow-xl group">
+                        <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                        </svg>
+                        <span>Add Your Name</span>
                     </a>
                 </div>
             </div>
@@ -114,8 +164,8 @@
                         GSEy PAC is committed to protecting and advancing equality for all New Jersey residents. We stand ready to defend our rights and values, regardless of the political climate.
                     </p>
                     <div class="grid md:grid-cols-3 gap-8 mt-12">
-                        <div class="text-center p-6 bg-purple-50 rounded-lg">
-                            <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <div class="text-center p-6 bg-blue-50 rounded-lg border border-blue-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full mx-auto mb-4 flex items-center justify-center">
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                                 </svg>
@@ -123,8 +173,8 @@
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Advocacy</h3>
                             <p class="text-gray-600">Fighting for equal rights and protections for all New Jersey residents through legislative action and community engagement.</p>
                         </div>
-                        <div class="text-center p-6 bg-purple-50 rounded-lg">
-                            <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <div class="text-center p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-full mx-auto mb-4 flex items-center justify-center">
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                 </svg>
@@ -132,8 +182,8 @@
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Community</h3>
                             <p class="text-gray-600">Building a strong, diverse coalition of supporters committed to protecting equality and justice in New Jersey.</p>
                         </div>
-                        <div class="text-center p-6 bg-purple-50 rounded-lg">
-                            <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <div class="text-center p-6 bg-amber-50 rounded-lg border border-amber-100">
+                            <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
@@ -147,100 +197,120 @@
         </div>
     </section>
 
-    <!-- Signup Form Section -->
-    <section id="signup" class="py-16 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">
-                    Stay Informed
-                </h2>
-                <p class="text-gray-600 text-center mb-8 text-lg">
-                    Join our community and receive updates about our work to protect equality in New Jersey. We'll keep you informed about ways you can make a difference.
-                </p>
-                
-                <form id="signupForm" class="space-y-6" novalidate>
-                    <!-- First Name -->
-                    <div>
-                        <label for="firstName" class="block text-sm font-semibold text-gray-700 mb-2">
-                            First Name *
-                        </label>
-                        <input type="text" 
-                               id="firstName" 
-                               name="firstName" 
-                               required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"
-                               placeholder="Enter your first name">
-                        <p class="error-message text-red-600 text-sm mt-1 hidden" id="firstNameError"></p>
-                    </div>
-
-                    <!-- Last Name -->
-                    <div>
-                        <label for="lastName" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Last Name *
-                        </label>
-                        <input type="text" 
-                               id="lastName" 
-                               name="lastName" 
-                               required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"
-                               placeholder="Enter your last name">
-                        <p class="error-message text-red-600 text-sm mt-1 hidden" id="lastNameError"></p>
-                    </div>
-
-                    <!-- Email -->
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Email Address *
-                        </label>
-                        <input type="email" 
-                               id="email" 
-                               name="email" 
-                               required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"
-                               placeholder="your.email@example.com">
-                        <p class="error-message text-red-600 text-sm mt-1 hidden" id="emailError"></p>
-                    </div>
-
-                    <!-- Zip Code -->
-                    <div>
-                        <label for="zipCode" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Zip Code *
-                        </label>
-                        <input type="text" 
-                               id="zipCode" 
-                               name="zipCode" 
-                               required
-                               maxlength="10"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition"
-                               placeholder="07001 or 07001-1234">
-                        <p class="error-message text-red-600 text-sm mt-1 hidden" id="zipCodeError"></p>
-                        <p class="text-xs text-gray-500 mt-1">5-digit or 5+4 digit format</p>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" 
-                            class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 transition duration-200 shadow-lg">
-                        Join the Movement
-                    </button>
-                </form>
-
-                <!-- Success Message -->
-                <div id="successMessage" class="hidden mt-6 p-6 bg-green-50 border-2 border-green-200 rounded-lg">
-                    <div class="flex items-center justify-center mb-3">
-                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    <!-- Modal Backdrop & Form -->
+    <div id="signupModal" class="hidden fixed inset-0 z-50 modal-backdrop">
+        <div class="flex items-center justify-center min-h-screen px-4 py-8">
+            <div class="modal bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <!-- Close Button -->
+                    <button id="closeModal" class="float-right text-gray-400 hover:text-gray-600 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
-                    </div>
-                    <p class="text-green-800 text-center font-semibold text-lg mb-2">
-                        Thank you for joining us!
+                    </button>
+                    
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3 mt-2">
+                        Stay Informed
+                    </h2>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Join our community and receive updates about our work to protect equality in New Jersey.
                     </p>
-                    <p class="text-green-700 text-center">
-                        We'll keep you informed about our work for equality in New Jersey and how you can help chart a path forward.
-                    </p>
+                    
+                    <form id="signupForm" class="space-y-4" novalidate>
+                        <!-- First Name -->
+                        <div>
+                            <label for="firstName" class="block text-sm font-semibold text-gray-700 mb-1">
+                                First Name *
+                            </label>
+                            <input type="text" 
+                                   id="firstName" 
+                                   name="firstName" 
+                                   required
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition text-sm"
+                                   placeholder="Enter your first name">
+                            <p class="error-message text-red-600 text-xs mt-1 hidden" id="firstNameError"></p>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div>
+                            <label for="lastName" class="block text-sm font-semibold text-gray-700 mb-1">
+                                Last Name *
+                            </label>
+                            <input type="text" 
+                                   id="lastName" 
+                                   name="lastName" 
+                                   required
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition text-sm"
+                                   placeholder="Enter your last name">
+                            <p class="error-message text-red-600 text-xs mt-1 hidden" id="lastNameError"></p>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">
+                                Email Address *
+                            </label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   required
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition text-sm"
+                                   placeholder="your.email@example.com">
+                            <p class="error-message text-red-600 text-xs mt-1 hidden" id="emailError"></p>
+                        </div>
+
+                        <!-- Zip Code -->
+                        <div>
+                            <label for="zipCode" class="block text-sm font-semibold text-gray-700 mb-1">
+                                Zip Code *
+                            </label>
+                            <input type="text" 
+                                   id="zipCode" 
+                                   name="zipCode" 
+                                   required
+                                   maxlength="10"
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition text-sm"
+                                   placeholder="07001 or 07001-1234">
+                            <p class="error-message text-red-600 text-xs mt-1 hidden" id="zipCodeError"></p>
+                            <p class="text-xs text-gray-500 mt-1">5-digit or 5+4 digit format</p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-blue-700 to-emerald-600 text-white font-bold py-3 px-6 rounded-lg hover:from-blue-800 hover:to-emerald-700 transform hover:scale-105 transition duration-200 shadow-lg text-sm">
+                            Join the Movement
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed top-4 right-4 z-50 toast max-w-sm">
+        <div class="bg-white rounded-lg shadow-2xl border-l-4 border-emerald-500 p-4">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div class="ml-3 flex-1">
+                    <p class="text-sm font-semibold text-gray-900">
+                        Form received!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-1">
+                        Thank you! You're now subscribed for updates from GSE PAC.
+                    </p>
+                </div>
+                <button id="closeToast" class="ml-4 flex-shrink-0 text-gray-400 hover:text-gray-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Why Join Section -->
     <section class="py-16 bg-white">
@@ -250,26 +320,26 @@
                     Why Your Voice Matters
                 </h2>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Be Prepared</h3>
+                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Be Prepared</h3>
                         <p class="text-gray-700">
                             No matter what challenges come from any administration, we're building a strong coalition ready to defend equality rights in New Jersey.
                         </p>
                     </div>
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Stay Connected</h3>
+                    <div class="bg-emerald-50 p-6 rounded-lg border border-emerald-100">
+                        <h3 class="text-xl font-bold text-emerald-900 mb-3">Stay Connected</h3>
                         <p class="text-gray-700">
                             Get timely updates on legislation, campaigns, and opportunities to make your voice heard on critical equality issues.
                         </p>
                     </div>
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Chart the Path Forward</h3>
+                    <div class="bg-amber-50 p-6 rounded-lg border border-amber-100">
+                        <h3 class="text-xl font-bold text-amber-900 mb-3">Chart the Path Forward</h3>
                         <p class="text-gray-700">
                             Join fellow New Jersey residents in shaping strategies and actions that will protect and advance equality for all.
                         </p>
                     </div>
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Make an Impact</h3>
+                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Make an Impact</h3>
                         <p class="text-gray-700">
                             Your participation strengthens our collective power to create meaningful, lasting change in our communities.
                         </p>
@@ -283,20 +353,12 @@
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <div class="flex items-center justify-center space-x-2 mb-6">
-                    <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">GSE</span>
-                    </div>
-                    <div>
-                        <h3 class="logo-text text-xl text-white">GSE Pac</h3>
-                        <p class="text-xs text-purple-400 font-semibold">PAC</p>
-                    </div>
-                </div>
+                <h3 class="logo-text text-2xl text-white mb-6">GSE PAC</h3>
                 <p class="text-gray-300 mb-4">
                     For more information, contact us at:
                 </p>
                 <a href="mailto:fuscarino@gmail.com" 
-                   class="text-purple-400 hover:text-purple-300 font-semibold text-lg transition">
+                   class="text-amber-400 hover:text-amber-300 font-semibold text-lg transition">
                     fuscarino@gmail.com
                 </a>
                 <div class="mt-8 pt-8 border-t border-gray-700">
@@ -311,11 +373,62 @@
         </div>
     </footer>
 
-    <!-- Form Validation Script -->
+    <!-- Form Validation & Modal Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('signupForm');
-            const successMessage = document.getElementById('successMessage');
+            const modal = document.getElementById('signupModal');
+            const toast = document.getElementById('toast');
+            const closeModalBtn = document.getElementById('closeModal');
+            const closeToastBtn = document.getElementById('closeToast');
+            
+            // Open modal when clicking "Join Us" or "Add Your Name" links
+            const signupLinks = document.querySelectorAll('a[href="#signup"]');
+            signupLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+            });
+            
+            // Close modal
+            closeModalBtn.addEventListener('click', function() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+            
+            // Close modal when clicking backdrop
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Close toast
+            closeToastBtn.addEventListener('click', function() {
+                hideToast();
+            });
+            
+            // Show toast notification
+            function showToast() {
+                toast.classList.remove('hidden');
+                
+                // Auto-hide after 5 seconds
+                setTimeout(function() {
+                    hideToast();
+                }, 5000);
+            }
+            
+            // Hide toast with animation
+            function hideToast() {
+                toast.classList.add('toast-exit');
+                setTimeout(function() {
+                    toast.classList.add('hidden');
+                    toast.classList.remove('toast-exit');
+                }, 300);
+            }
             
             // Form field elements
             const firstName = document.getElementById('firstName');
@@ -420,7 +533,7 @@
                 const isEmailValid = validateEmail();
                 const isZipCodeValid = validateZipCode();
                 
-                // If all fields are valid, show success message
+                // If all fields are valid, show toast and close modal
                 if (isFirstNameValid && isLastNameValid && isEmailValid && isZipCodeValid) {
                     // Log form data (in production, this would be sent to your mailing list service)
                     console.log('Form Data:', {
@@ -430,19 +543,15 @@
                         zipCode: zipCode.value
                     });
                     
-                    // Hide form
-                    form.classList.add('hidden');
+                    // Close modal
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
                     
-                    // Show success message
-                    successMessage.classList.remove('hidden');
+                    // Show toast notification
+                    showToast();
                     
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Reset form after a delay
-                    setTimeout(function() {
-                        form.reset();
-                    }, 1000);
+                    // Reset form
+                    form.reset();
                 }
             });
         });
